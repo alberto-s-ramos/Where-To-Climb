@@ -1,0 +1,50 @@
+
+
+
+/* leaflet map */
+
+#mapid {
+    height: 83%;
+    margin-top: 100px;
+}
+
+@media screen and (min-width: 768px) {
+    #mapid {
+        height: 90%;
+        margin-top: 90px;
+    }
+}
+
+/* legend labels */
+.gymLabel{
+    font-size: 1.75rem;
+    font-family: 'Open Sans', arial, sans-serif;
+    font-style: bold;
+    text-align: left;
+    color: white;
+    float: top;
+}
+/* legend div */
+.mapLabel {
+      background-color: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      position: absolute;
+      border-radius: 5px;
+      padding-left: 4px;
+      padding-right: 4px;
+
+/*  display: flex;
+  width: 280px;
+  height: 150px;
+  flex-wrap: wrap;
+  border-radius: 50px;
+  background: transparent no-repeat scroll 0% 0% / 50px 55px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 60px 30px;
+  color: #fff;
+  z-index: 100;
+  position: fixed;
+  overflow-y: scroll;
+  align-items:flex-start;*/
+}

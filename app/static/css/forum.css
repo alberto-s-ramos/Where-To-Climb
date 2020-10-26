@@ -1,0 +1,121 @@
+#forumMainDiv {
+    width: 100%;
+    text-align: center;
+    margin-top: 130px;
+}
+
+.forumDiv {
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: rgba(230, 230, 230, 0.5);
+
+    padding: 4rem 7% 5rem 7%;
+    align-items:center;
+    text-align: center;
+}
+
+#forumtitle {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    text-align: center;
+    font-size: 7rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 700; 
+    line-height: 10rem; 
+}
+
+.white-button {
+    margin-bottom:2rem;
+}
+
+.postLabel {
+  width: 100%;
+  height: 150px;
+  border-radius: 20px;
+  background: transparent no-repeat scroll 0% 0% / 50px 55px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  align-items:center;
+
+}
+
+.postLabel > h1{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-size: 2vW; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 700; 
+    line-height: 26.4px; 
+    margin-left: 20px;
+    padding-top: 20px;
+
+}
+
+.answer{
+    font-family: 'Open Sans', arial, sans-serif;
+    font-size: 1.5vW; 
+    font-style: normal; 
+    font-variant: inherit;
+    font-weight: 50; 
+    line-height: 26.4px; 
+    margin-left: 120px;
+    margin-top: -45px;
+
+}
+
+.a{
+    font-size: 30px;
+	letter-spacing: 0.5px;
+	line-height: 30px;
+	margin-bottom: 25px;
+}
+
+
+
+
+
+td{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-size: 2vW;
+}
+
+
+.thread{
+	align-items: center;
+}
+.forumLabel>.threadArea{
+	width: 100%;
+    align-items: center;
+    text-align: center;
+
+}
+.thread {
+	align-items: center;
+    border-radius: 100px;
+	padding: 20px 20px;
+	color: #fff;
+    margin-bottom: 36px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.thread:hover{
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.65);
+}
+
+
+.thread h4 {
+	font-size: 4rem;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+
+.thread p {
+    font-size: 3rem;
+    margin-bottom: 10px;
+	color: #fff;
+}

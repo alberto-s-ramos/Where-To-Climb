@@ -1,0 +1,20 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+
+</head>
+
+<br>
+<div class="postArea">
+    <div class="userDiv">
+        <img src="{{ post.author.avatar(36) }}" style="width: 80px; margin-right:10px; border-radius: 50%;">
+        <p>{{ post.author.username }}</p>
+    </div>
+    <div class="messageDiv">
+        <p>{{ moment(post.timestamp).fromNow()}}</p> 
+        <br>
+        <p><b>{{ post.body }}</b><p>
+      </div>
+    
+    
+
+</div>

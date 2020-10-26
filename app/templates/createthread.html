@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/createThread.css') }}">
+</head>
+
+
+
+<div class="createThreadLabel" style="margin-top: 120px; margin:0 auto; margin-top: 180px; align-items: center"> 
+
+    <form action="" method="post">
+        <h4>Writing post as {{ current_user.username }}</h4><br><br>
+        {{ form.hidden_tag() }}
+            {{ form.threadname.label }}<br>
+            
+            <div class="threadName">
+                {{ form.threadname(cols=32, rows=1) }}
+                {% for error in form.threadname.errors %}
+                <p style="color:white;">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <br>
+            {{ form.post.label }}<br>
+            {{ form.post(cols=32, rows=4) }}<br>
+            {% for error in form.post.errors %}
+                <p style="color:white;">{{ error }}</p>
+            {% endfor %}
+            <br>
+            {{ form.submit() }}
+    </form>
+</div>
+{% endblock %}
+
+
+
+<!--
+<div class="createthreadLabel" style="margin-top: 120px; margin:0 auto; margin-top: 30px; align-items: center">    
+        <h4>{{ current_user.username }} says:</h4>
+         <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.threadname.label }}<br>
+                {{ form.threadname(cols=32, rows=1) }}<br>
+                {{ form.post.label }}<br>
+                {{ form.post(cols=32, rows=4) }}<br>
+                {% for error in form.post.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    
+</div>
+
+-->

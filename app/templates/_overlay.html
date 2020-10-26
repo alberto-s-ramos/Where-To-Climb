@@ -1,0 +1,39 @@
+<head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/_overlay.css') }}">
+    </head>
+
+<div id="overlay" onclick="closePopup()">
+        <div id="popup-name" class="gymName"></div><br>
+        <div id="popup-location" class="gymLocation"></div><br>
+        <div class="description">Price: </div>
+        <div id="popup-prices" class="content"></div><br><br>
+        <div class="description"> Schedule:</div>
+        <div id="popup-schedule" class="content"> </div> <br> <br>
+        <div  class="description"> Types of Climbing:</div>
+        <div id="popup-types" class="content"></div>
+
+        <br><br><br>
+        
+        <div class="white-button">
+            <a id="popup-website">Website</a>
+        </div>
+        
+        <br><br>
+
+</div>
+<script>
+    function openPopup(name,location,prices,schedule,types,website) {
+        document.getElementById("popup-name").innerHTML = name;
+        document.getElementById("popup-location").innerHTML = location;
+        document.getElementById("popup-prices").innerHTML = prices;
+        document.getElementById("popup-schedule").innerHTML = schedule;
+        document.getElementById("popup-types").innerHTML = types;
+        document.getElementById("popup-website").href=website;
+        
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>

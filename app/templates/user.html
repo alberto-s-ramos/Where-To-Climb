@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+</head>
+<div id="mainprofilediv">
+<div id= "profile"  >
+           <img id="userimg" src="{{ user.avatar(128) }}" >
+         
+            <p>Currently logged in as</p>
+                
+               <h4> {{ user.username }}</h4> 
+                {% if user.about_me %}
+                <br>
+                {{ user.about_me }}
+                <br>
+                {% endif %}
+                {% if user.last_seen %}
+                    <br>Account created on: {{ user.creation_date }}
+                {% endif %}
+        
+        <div class="white-button">
+            <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+        
+ 
+</div>
+</div>
+<!--
+
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
+
+-->

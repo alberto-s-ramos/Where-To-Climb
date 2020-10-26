@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+</head>
+
+
+<div id="forumMainDiv">
+<div class="forumDiv">
+    <h4 id="forumtitle">Find climbing buddies</h4>
+    <div class="white-button">
+            <a href="{{ url_for('createthread') }}">Create Thread</a>
+    </div>
+      <div style="align-items: center">
+    
+         {% for thread in threads %}
+        
+        <div class="threadArea">
+            <div class="thread" onclick="location.href='{{ url_for('thread',thread_id=thread.id) }}';"&nbsp;>
+                <h4>{{thread.title }} </h4>
+                <p>By: {{thread.author.username}}</p>
+                {% set timedate = thread.posts.first().timestamp %}
+                <p>Created {{  moment(thread.posts.first().timestamp).fromNow() }}</p>
+            </div>
+        </div>
+        
+        
+        
+        <!--
+    <div class="linkToThread">
+        <a href="{{ url_for('thread',thread_id=thread.id) }}">{{ thread.title }}</a>
+    </div>
+    <br>
+s
+  -->
+      {% endfor  %}
+    
+      </div>
+</div>
+
+    
+  
+</div>
+
+
+{% endblock %}

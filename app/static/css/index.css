@@ -1,0 +1,236 @@
+
+p {
+	color: #5a5a5a;
+	font-size: 20px;
+	letter-spacing: 0.25px;
+	line-height: 24px;
+    text-align: center;
+    color: white;
+}
+
+
+/* -------------- INITIAL IMAGE -------------- */
+.hero {
+    /* Sizing */
+    width: 100%;
+    height: 100%;
+    /*cancel padding*/
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Text styles */
+    text-align: center;
+   color: white; /* ADD THIS LINE */
+	/* Background styles */
+    background-color: rgba(0, 0, 0, 0.65);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.initialImage{
+    width: 55em;
+    max-width: 90%;
+}
+
+
+/* -------------- END OF INITIAL IMAGE -------------- */
+
+
+
+
+
+
+/* ---------- DIFFERENT GYMS ---------- */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.flex-container>.gym{
+	align-items: center;
+}
+.gymArea{
+	width: 50em;
+
+}
+.gym {
+	display: block;
+    flex-wrap: wrap;
+	align-items: center;
+    border-radius: 100px;
+    background: transparent no-repeat scroll 0% 0% / 50px 55px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 80px 40px;
+	color: #fff;
+    margin-bottom: 36px;
+    text-align: center;
+    margin-right: 16px;
+    margin-left: 16px
+}
+.gym:hover{
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.65);
+}
+
+/*
+KiipeilyAreena Salmisaari
+*/
+
+.gymArea:nth-of-type(1) > .gym {
+    background-image: url(../img/KASalmisaariBKImg.png);
+
+}
+
+/*
+KiipeilyAreena Kalastama
+*/
+.gymArea:nth-of-type(2) > .gym {
+    background-image: url(../img/KAKalastama.png);
+
+}
+
+/*
+KiipeilyAreena Tammisto
+*/
+.gymArea:nth-of-type(3) > .gym {
+    background-image: url(../img/KATammisto.png);
+
+}
+
+/*
+Boulderkeskus Herttoniemi
+*/
+.gymArea:nth-of-type(4) > .gym {
+    background-image: url(../img/BKHerttoniemi.png);
+
+}
+
+/*
+Boulderkeskus Konala
+*/
+.gymArea:nth-of-type(5) > .gym {
+    background-image: url(../img/BKImgBKKonala.png);
+
+}
+
+/*
+Boulderkeskus Pasila
+*/
+.gymArea:nth-of-type(6) > .gym {
+    background-image: url(../img/BKImgBKPasilla.png);
+
+}
+
+/*
+Boulderkeskus Espoo
+*/
+.gymArea:nth-of-type(7) > .gym {
+    background-image: url(../img/BKEspoo.png);
+
+}
+
+/*
+Helsinki KiipeilyKeskus
+*/
+.gymArea:nth-of-type(8) > .gym {
+    background-image: url(../img/HKK.png);
+
+}
+
+
+
+.gym h4 {
+	font-size: 5rem;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+
+.gym p {
+    font-size: 4.5rem;
+    margin-bottom: 30px;
+	color: #fff;
+}
+
+
+/* ---------- OVERLAY- SHOWS UP WHEN THE USER PRESSES A GYM ---------- */
+
+
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+.location{
+    font-size: 3vW;
+    font-family: 'Open Sans', arial, sans-serif;
+    font-style: normal;
+}
+
+.gymLogo{
+    width: 500px;
+}
+
+
+
+
+
+
+
+.map-container-7{
+    overflow:hidden;
+    position:relative;
+    height:830px;
+}
+.map-container-7 iframe{
+    left:0;
+    top:0;
+    height:830px;
+    width:100%;
+    position:absolute;
+}
+
+.gymLabel{
+    font-size: 1.5vW;
+    font-family: 'Open Sans', arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    margin-top: -40px;
+    color: white;
+}
+
+
+.mapLabel {
+	display: flex;
+    width: 23vW;
+    height: 12vW;
+    flex-wrap: wrap;
+    border-radius: 50px;
+    background: transparent no-repeat scroll 0% 0% / 50px 55px;
+    background-color: rgba(0, 0, 0, 0.5);
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 60px 30px;
+	color: #fff;
+    z-index: 100;
+    position: fixed;
+    vertical-align: bottom;
+    overflow-y: scroll
+}
+
+
+

@@ -1,0 +1,54 @@
+
+#mainprofilediv {
+    width: 100%;
+    text-align: center;
+    margin-top: 130px;
+}
+
+#profile {
+    display: inline-block;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    padding: 4rem 7% 5rem 7%;
+    align-items:center;
+    text-align: center;
+}
+
+#profile h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    text-align: center;
+    font-size: 5rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 700; 
+}
+
+#userimg {
+    margin: 0 auto; 
+    width: 20rem; 
+    border-radius: 50%; 
+    margin-bottom: 30px;
+}
+
+.userLabel {
+  width: 40%;
+  height: 80%;
+ 
+  /*background: transparent no-repeat scroll 0% 0% / 50px 55px;*/
+ /* background-size: cover;
+  background-repeat: no-repeat;*/
+  padding: 60px 30px;
+  color: #fff;
+  z-index: 100;
+ /* overflow-y: scroll; */
+
+ /*  display:block; */
+}
+
+.white-button {
+    margin-top: 30px;
+}
+

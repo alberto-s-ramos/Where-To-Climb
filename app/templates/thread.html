@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/thread.css') }}">
+</head>
+
+<div id="threadMainDiv">
+    <div id="threadDiv">
+<h4>{{ thread.title }}</h4>
+{% for post in posts %}
+    {% include '_posts.html' %}
+{% endfor %}
+
+
+
+{% if current_user.is_authenticated %}
+<div id="responseDiv">    
+    <form action="" method="post">
+            <p>
+                <br>
+                {{ form.hidden_tag() }}
+                {{ form.post.label }}
+                <br>
+                {{ form.post(cols=100, rows=4) }}
+                <br>
+                {% for error in form.post.errors %}
+                <span style="color: black;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+    </form>
+</div>
+{% endif %}
+</div>
+</div>
+{% endblock %}

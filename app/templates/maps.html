@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/maps.css') }}">
+  <!-- leaflet map requirements -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+   <!-- end leadlet map requirements -->
+</head>
+
+
+
+  <!-- legend -->
+  <div id="mapid">
+    <div class="mapLabel" id="legend" >
+      <div class="gymLabel" > <img src="{{ url_for('static', filename='img/Icon1.png') }}" alt="Smiley face" width="40px" align="middle"> KiipeilyAreena</div>
+      
+      <div class="gymLabel"> <img src="{{ url_for('static', filename='img/Icon2.png') }}" alt="Smiley face" width="40px" align="middle"> Helsinki Kiipeilykeskus</div>
+      
+      <div class="gymLabel" > <img src="{{ url_for('static', filename='img/Icon3.png') }}" alt="Smiley face" width="40px" align="middle"> Boulderkeskus</div>
+  </div>
+  </div>
+
+  <script>
+    //initialize map
+    var mymap = L.map('mapid').setView([60.2295,  24.93545], 11);
+    L.tileLayer('https://api.mapbox.com/styles/v1/yetijorik/ck35py7mk371u1cny0cht78ie/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox.streets',
+      accessToken: 'pk.eyJ1IjoieWV0aWpvcmlrIiwiYSI6ImNrMzJ0d3c3ejAyOWwzbnBqa2VyeXI4dDUifQ.GPh6Yl8HYQmj03tZAEoj3Q'
+      }).addTo(mymap);
+      
+    //add legend
+    legend = L.control(position = "bottomright");
+    legend.onAdd = function(map) {
+      return document.getElementById("legend")
+    }
+    legend.addTo(mymap)
+    
+
+      //add markers
+      var GymIcon = L.Icon.extend({
+        options: {
+          iconSize:     [40, 40],
+          iconAnchor:   [20,20],
+          popupAnchor:  [0, 0]
+        }
+      });
+
+      var redIcon = new GymIcon({iconUrl: "{{ url_for('static', filename='img/Icon1.png') }}" }),
+          orangeIcon = new GymIcon({iconUrl: "{{ url_for('static', filename='img/Icon2.png') }}" }),
+          blueIcon = new GymIcon({iconUrl: "{{ url_for('static', filename='img/Icon3.png') }}" })
+
+
+      //var marker = L.marker([60.1695,  24.93545], {icon: blueIcon}).addTo(mymap);
+      //marker.bindPopup("<b>Gym name</b><br><a href='{{ url_for('index') }}'>More info</a>");
+
+      {% for gym in gyms %}
+        var {{ gym.organization }}{{ gym.name }}marker = L.marker({{ gym.coordinates }}, { icon: {% if gym.organization == 'KiipeilyAreena' %} redIcon {% elif gym.organization == 'Boulderkeskus' %} blueIcon {% else %} orangeIcon {% endif %} }).addTo(mymap);
+        var bubblelink = 
+        {{ gym.organization }}{{ gym.name }}marker.bindPopup("<b>{{ gym.organization}}, {{gym.name}}</b><br><a href='javascript:openPopup(\"{{ gym.organization }}\", \"{{ gym.name }}\", \"{{ gym.price }}\", \"{{ gym.schedule }}\", \"{{ gym.types }}\",\"{{ gym.website}}\" )'>More info</a>")
+      {% endfor %}
+
+  </script>
+
+  <!--Add overlay-->
+  {% include '_overlay.html' %}
+
+
+  <!--Google map
+      <div  style="z-index: 50;" style="position: absolute"; id="map-container-google-12" class=" map-container-7" >
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=19Jn2ybrpnaIlOCBxjM6Gcy2bzZMRnhdQ"   frameborder="0"
+          style="border:20px" >
+
+        </iframe>
+
+
+      </div>-->
+
+{% endblock %}
+

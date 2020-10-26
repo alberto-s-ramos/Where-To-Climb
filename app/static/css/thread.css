@@ -1,0 +1,107 @@
+#threadMainDiv {
+    width: 100%;
+    text-align: center;
+    margin-top: 130px;
+    display: inline-block;
+}
+
+#threadDiv {
+    display: inline-block;
+
+    border-radius: 10px;
+    background-color: rgba(230, 230, 230, 0.5);
+
+    padding-top: 4rem;
+    align-items:left;
+    text-align: left;
+}
+
+/* thread name */
+h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    text-align: center;
+    font-size: 4rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 700; 
+    margin-left: 2rem;
+
+}
+
+/* posts stying */
+.postArea{
+    display: inline-block;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: 10px;
+    color: white;
+    margin-left: 2rem;
+}
+
+.userDiv{
+    display: inline-block;
+    float: left;
+}
+
+.messageDiv{
+    display: inline-block;
+    float: left;
+    align-text: left;
+    word-wrap:break-word;
+    max-width: 80%;
+}
+
+
+
+/* "your message" */
+label{
+        margin-left: 2rem;
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    text-align: center;
+    font-size: 3rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 700;
+}
+
+textarea{
+    border: 2px solid grey; 
+    background-color: rgba(255, 255, 255, 0.57);
+    border-radius: 10px;
+    font-size: 3rem;
+    width: 50rem;
+    max-width: 90%;
+    height: 20rem;
+    color: black;
+    margin-left: 2rem;
+
+
+}
+
+
+/* submit button */
+input{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-size: 2.5rem; 
+    color: black;
+    width: 30rem;
+    max-width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.71);
+    margin-left: 2rem;
+
+}
+
+.a{
+    font-size: 30px;
+	letter-spacing: 0.5px;
+	line-height: 30px;
+	margin-bottom: 25px;
+}
+
+
+
+
+

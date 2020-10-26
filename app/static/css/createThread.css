@@ -1,0 +1,75 @@
+.createThreadLabel {
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 60px 30px;
+  color: #fff;
+  z-index: 100;
+  align-items:center;
+  text-align: center;
+ 
+}
+
+textarea{
+    border: 2px solid #000; 
+    background-color: rgba(255, 255, 255, 0.57);
+    border-radius: 10px;
+    font-size: 20px;
+    width: 60rem;
+    max-width: 90%;
+    height: 200px;
+    color: black;
+    margin-right: 30px;
+}
+
+.threadName > textarea{
+    border: 2px solid #000; 
+    background-color: rgba(255, 255, 255, 0.57);
+    border-radius: 10px;
+    font-size: 20px;
+    width: 60rem;
+    max-width: 90%;
+    height: 40px;
+    color: black;
+    margin-right: 30px;
+}
+
+
+label{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    text-align: center;
+    font-size: 2rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 700; 
+    line-height: 26.4px; 
+}
+
+input{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-size: 2rem; 
+    color: black;
+    width: 20rem;
+    max-width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.a{
+    font-size: 30px;
+	letter-spacing: 0.5px;
+	line-height: 30px;
+	margin-bottom: 25px;
+}
+ h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    text-align: center;
+    font-size: 6rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 700; 
+}
+
+
+
+

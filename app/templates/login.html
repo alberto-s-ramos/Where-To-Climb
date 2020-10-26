@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<div id="backgroundo">
+    <div id="signinText">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h1>Sign In</h1>
+    </div>
+
+
+    <div id="loginBox">
+        <div id="loginSubBox">
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <div class="formBox">
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=28) }}<br>
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+                <div class="formBox">
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=28) }}<br>
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+  
+                <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+
+                <div id= "loginButton"> 
+                    <p>{{ form.submit() }}</p>
+                </div>
+                
+            </form>
+        </div>
+
+        <div id ="newuserText">
+            <p>New User? 
+               
+                <div class="white-button">
+                    <a href="{{ url_for('register') }}">Register</a>
+                </div>
+           
+        </div>
+
+    </div>
+</div>
+{% endblock %}
